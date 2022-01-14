@@ -1,0 +1,39 @@
+<%- include ("../public/page_header.html") %>
+
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Edit comments
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive input-form">
+                <form action="/admin/comment/doEdit" method="post" id="for1m">
+                    <ul>
+                        <input hidden name="_id" id="_id" value="<%= list._id %>" />
+                        <input hidden name="add_time" id="add_time" value="<%= list.add_time %>" />
+                        <li> <span>Username:</span><input type="text" name="username" id="username" readonly
+                                value="<%= list.username %>" style="background-color:#CCCCCC" /></li>
+                        <li> <span>TitileName:</span> <input type="text" name="atitle" id="atitle" readonly
+                                value="<%= list.articletitle %>" style="background-color:#CCCCCC" /></li>
+                        <li> <span>content:</span> <textarea type="text" name="ccontent"
+                                id="ccontent"><%= list.content %></textarea>
+                        </li>
+                        <li>
+                            <div class="error"> </div>
+                            <br />
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </li>
+                    </ul>
+
+
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+    
+    </body>
+
+    </html>

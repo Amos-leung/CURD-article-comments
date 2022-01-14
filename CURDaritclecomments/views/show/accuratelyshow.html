@@ -1,0 +1,54 @@
+<%- include ("../public/page_header.html")%>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-sm-10">
+
+                <!-- list for show datas -->
+
+                <div class="table-responsive">
+                    <span style="color: red;  ">The problem of one - to - many cell display cannot be solved for now</span>
+                    <table class="table table-bordered">
+                        <thead>
+                           
+                            <tr class="th">
+                                <th>Username</th>
+                                <th>Article Title</th>
+                               
+                                <th>Article Content</th>
+                                <th>Comments</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(var i=0; i < list.length ; i++) {%>
+                                <tr>
+                                    <td>
+                                        <%= list[i].username %>
+                                    </td>
+                                    <td>
+                                        <%= list[i].title %>
+                                    </td>
+                                    <td>
+                                        <%= list[i].acontent %>
+                                    </td>
+
+                                    <% for(var j=0; j< list[i].sum.length ; j++) {%>
+
+                                        <td>
+                                            <%= list[i].sum[j].content %>
+                                        </td>
+                                        <%}%>
+                                </tr>
+                                <%}%>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+    </html>

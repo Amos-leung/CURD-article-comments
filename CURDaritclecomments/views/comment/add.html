@@ -1,0 +1,56 @@
+<%- include ("../public/page_header.html") %>
+
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Add comments
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive input-form">
+                <form action="/admin/comment/doAdd" method="post" id="for1m">
+                    <ul>
+                        <li> <span>Username:</span><input type="text" name="username" id="username" /></li>
+                        <li> <span>ArticleName:</span> <input type="text" name="atitle" id="atitle" /></li>
+                        <li> <span>Content:</span> <textarea type="text" name="ccontent" id="ccontent"></textarea>
+                        </li>
+                        <li> <div class="error"> </div>
+                            <br />
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </li>
+                    </ul>
+
+
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- Make simple judgments about what the user has entered -->
+    <script>
+        $("#for1m").submit(function () {
+
+            var username = $("#username").val()
+            var atitle = $("#atitle").val()
+            var ccontent = $("#ccontent").val()
+
+            if (username == "") {
+                $(".error").html("Error:Username can not be null")
+                return false
+            }
+            if (atitle == "") {
+                $(".error").html("Error:ArticleName can not be null")
+                return false
+            }
+            if (ccontent == "") {
+                $(".error").html("Error:Content can not be null")
+                return false
+            }
+            $(".error").html("")
+            return true
+        })
+    </script>
+    </body>
+
+    </html>

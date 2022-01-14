@@ -1,0 +1,56 @@
+<%- include ("../public/page_header.html") %>
+
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Add Article
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive input-form">
+                <form action="/admin/article/doAdd" method="post" id="for1m">
+                    <ul>
+                        <li> <span>Username:</span><input type="text" name="username" id="username" /></li>
+                        <li> <span>Articel Title:</span> <input type="text" name="title" id="title" /></li>
+                        <li> <span>Content:</span> <textarea type="text" name="content" id="content"></textarea>
+                        </li>
+                        <li> <div class="error"> </div>
+                            <br />
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </li>
+                    </ul>
+
+
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- Make simple judgments about what the user has entered -->
+    <script>
+        $("#for1m").submit(function () {
+
+            var username = $("#username").val()
+            var atitle = $("#title").val()
+            var ccontent = $("#content").val()
+
+            if (username == "") {
+                $(".error").html("Error:Username can not be null")
+                return false
+            }
+            if (title == "") {
+                $(".error").html("Error:ArticleName can not be null")
+                return false
+            }
+            if (content == "") {
+                $(".error").html("Error:Content can not be null")
+                return false
+            }
+            $(".error").html("")
+            return true
+        })
+    </script>
+    </body>
+
+    </html>
